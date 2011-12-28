@@ -55,7 +55,7 @@ public class MainForm
 
         dwarfInfo = new JTextPane(new HTMLDocument());
         dwarfInfo.setContentType("text/html");
-        dwarfInfo.setText("<html><body id='body'></body></html>");
+        dwarfInfo.setText("<html><head><style>th { text-align: right; }</style></head><body id='body'></body></html>");
     }
 
     private static class XmlFileFilter extends FileFilter
