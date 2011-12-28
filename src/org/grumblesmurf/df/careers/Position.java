@@ -35,7 +35,7 @@ public enum Position
     Weaver(Agility, Creativity, SpatialSense, KinaestheticSense),
     WoodCrafter(Agility, Creativity, SpatialSense, KinaestheticSense),
     Carpenter(Strength, Agility, Creativity, SpatialSense, KinaestheticSense),
-    WoodCutter(Strength, Agility, Endurance, Willpower, SpatialSense, KinaestheticSense),
+    Woodcutter(Strength, Agility, Endurance, Willpower, SpatialSense, KinaestheticSense),
     Swimmer(Strength, Agility, Endurance, Willpower, SpatialSense, KinaestheticSense),
     Wrestler(Strength, Agility, Endurance, Willpower, SpatialSense, KinaestheticSense),
     Mason(Strength, Agility, Endurance, Willpower, SpatialSense, KinaestheticSense),
@@ -129,5 +129,11 @@ public enum Position
 
     public Evaluation evaluate(Dwarf dwarf) {
         return Evaluation.of(sumScore(dwarf, attributes));
+    }
+
+    @Override
+    public String toString() {
+        String name = name();
+        return name.replaceAll("(.)([A-Z])", "$1 $2");
     }
 }
