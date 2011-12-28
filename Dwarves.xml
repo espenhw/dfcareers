@@ -1,0 +1,260 @@
+<Creatures>
+  <Creature>
+    <Name>Goden Solonaved</Name>
+    <Nickname></Nickname>
+    <Sex>Male</Sex>
+    <Attributes>
+      <Strength>1250</Strength>
+      <Agility>836</Agility>
+      <Toughness>1201</Toughness>
+      <Endurance>539</Endurance>
+      <Recuperation>660</Recuperation>
+      <DiseaseResistance>773</DiseaseResistance>
+      <Willpower>1288</Willpower>
+      <Memory>1629</Memory>
+      <Focus>1059</Focus>
+      <Intuition>974</Intuition>
+      <Patience>939</Patience>
+      <Empathy>2136</Empathy>
+      <SocialAwareness>1393</SocialAwareness>
+      <Creatvity>1792</Creatvity>
+      <Musicality>1401</Musicality>
+      <AnalyticalAbility>1034</AnalyticalAbility>
+      <LinguisticAbility>1675</LinguisticAbility>
+      <SpatialSense>869</SpatialSense>
+      <KinaestheticSense>880</KinaestheticSense>
+    </Attributes>
+    <Traits>
+      <Trait>Often feels discouraged</Trait>
+      <Trait>Does not go out of own way to help others</Trait>
+      <Trait>Not easily moved to pity</Trait>
+      <Trait>Lacks confidence</Trait>
+      <Trait>Finds rules confining</Trait>
+    </Traits>
+  </Creature>
+  <Creature>
+    <Name>Monom Bomrekidath</Name>
+    <Nickname></Nickname>
+    <Sex>Male</Sex>
+    <Attributes>
+      <Strength>1495</Strength>
+      <Agility>320</Agility>
+      <Toughness>1924</Toughness>
+      <Endurance>806</Endurance>
+      <Recuperation>669</Recuperation>
+      <DiseaseResistance>920</DiseaseResistance>
+      <Willpower>2013</Willpower>
+      <Memory>1373</Memory>
+      <Focus>1742</Focus>
+      <Intuition>1228</Intuition>
+      <Patience>839</Patience>
+      <Empathy>568</Empathy>
+      <SocialAwareness>615</SocialAwareness>
+      <Creatvity>1070</Creatvity>
+      <Musicality>2454</Musicality>
+      <AnalyticalAbility>1669</AnalyticalAbility>
+      <LinguisticAbility>1780</LinguisticAbility>
+      <SpatialSense>1140</SpatialSense>
+      <KinaestheticSense>634</KinaestheticSense>
+    </Attributes>
+    <Traits>
+      <Trait>Slow to anger</Trait>
+      <Trait>Occassionally overindulges</Trait>
+      <Trait>Can handle stress</Trait>
+      <Trait>Assertive</Trait>
+      <Trait>Very active</Trait>
+      <Trait>Loves a good thrill</Trait>
+      <Trait>Does not have a great aesthetic sensitivity</Trait>
+      <Trait>Dislikes intellectual discussions</Trait>
+      <Trait>Trusting</Trait>
+      <Trait>Guarded in relationships with others</Trait>
+      <Trait>Willing to compromise with others</Trait>
+      <Trait>Is occasionally given to procrastination</Trait>
+    </Traits>
+  </Creature>
+  <Creature>
+    <Name>Vucar Lelummafol</Name>
+    <Nickname></Nickname>
+    <Sex>Male</Sex>
+    <Attributes>
+      <Strength>1232</Strength>
+      <Agility>214</Agility>
+      <Toughness>1769</Toughness>
+      <Endurance>984</Endurance>
+      <Recuperation>1984</Recuperation>
+      <DiseaseResistance>1046</DiseaseResistance>
+      <Willpower>1521</Willpower>
+      <Memory>1155</Memory>
+      <Focus>1010</Focus>
+      <Intuition>1849</Intuition>
+      <Patience>1832</Patience>
+      <Empathy>1650</Empathy>
+      <SocialAwareness>1148</SocialAwareness>
+      <Creatvity>943</Creatvity>
+      <Musicality>1153</Musicality>
+      <AnalyticalAbility>806</AnalyticalAbility>
+      <LinguisticAbility>822</LinguisticAbility>
+      <SpatialSense>949</SpatialSense>
+      <KinaestheticSense>971</KinaestheticSense>
+    </Attributes>
+    <Traits>
+      <Trait>Very slow to anger</Trait>
+      <Trait>Can handle stress</Trait>
+      <Trait>Assertive</Trait>
+      <Trait>Is not a risk-taker</Trait>
+      <Trait>Often cheerful</Trait>
+      <Trait>Incredibly creative</Trait>
+      <Trait>Likes to try new things</Trait>
+      <Trait>Admires tradition</Trait>
+      <Trait>Slow to trust others</Trait>
+      <Trait>Doesn't like to compromise with others</Trait>
+      <Trait>Modest</Trait>
+      <Trait>Not easily moved to pity</Trait>
+      <Trait>Very disorganized</Trait>
+      <Trait>Doesn't go out of own way to do more work than necessary</Trait>
+    </Traits>
+  </Creature>
+  <Creature>
+    <Name>Ast Sokannish</Name>
+    <Nickname></Nickname>
+    <Sex>Male</Sex>
+    <Attributes>
+      <Strength>2160</Strength>
+      <Agility>987</Agility>
+      <Toughness>1052</Toughness>
+      <Endurance>1035</Endurance>
+      <Recuperation>790</Recuperation>
+      <DiseaseResistance>923</DiseaseResistance>
+      <Willpower>1054</Willpower>
+      <Memory>1582</Memory>
+      <Focus>1028</Focus>
+      <Intuition>1004</Intuition>
+      <Patience>1026</Patience>
+      <Empathy>1173</Empathy>
+      <SocialAwareness>1312</SocialAwareness>
+      <Creatvity>1097</Creatvity>
+      <Musicality>708</Musicality>
+      <AnalyticalAbility>1255</AnalyticalAbility>
+      <LinguisticAbility>1238</LinguisticAbility>
+      <SpatialSense>329</SpatialSense>
+      <KinaestheticSense>868</KinaestheticSense>
+    </Attributes>
+    <Traits>
+      <Trait>Is often nervous</Trait>
+      <Trait>Occassionally overindulges</Trait>
+      <Trait>Dislikes intellectual discussions</Trait>
+      <Trait>Put off by authority and tradition</Trait>
+      <Trait>Slow to trust others</Trait>
+      <Trait>Does not go out of own way to help others</Trait>
+      <Trait>Confident</Trait>
+      <Trait>Finds rules confining</Trait>
+    </Traits>
+  </Creature>
+  <Creature>
+    <Name>Litast Miskib</Name>
+    <Nickname></Nickname>
+    <Sex>Male</Sex>
+    <Attributes>
+      <Strength>577</Strength>
+      <Agility>1203</Agility>
+      <Toughness>2210</Toughness>
+      <Endurance>806</Endurance>
+      <Recuperation>636</Recuperation>
+      <DiseaseResistance>769</DiseaseResistance>
+      <Willpower>604</Willpower>
+      <Memory>723</Memory>
+      <Focus>1223</Focus>
+      <Intuition>1328</Intuition>
+      <Patience>499</Patience>
+      <Empathy>1190</Empathy>
+      <SocialAwareness>1387</SocialAwareness>
+      <Creatvity>1060</Creatvity>
+      <Musicality>1742</Musicality>
+      <AnalyticalAbility>1268</AnalyticalAbility>
+      <LinguisticAbility>1171</LinguisticAbility>
+      <SpatialSense>1200</SpatialSense>
+      <KinaestheticSense>909</KinaestheticSense>
+    </Attributes>
+    <Traits>
+      <Trait>Slow to anger</Trait>
+      <Trait>Comfortable in social situations</Trait>
+      <Trait>Enjoys being in crowds</Trait>
+      <Trait>Isn't given to flights of fancy</Trait>
+      <Trait>Regards intellectual exercises as a waste of energy</Trait>
+      <Trait>Guarded in relationships with others</Trait>
+      <Trait>Does not go out of own way to help others</Trait>
+      <Trait>Not easily moved to pity</Trait>
+      <Trait>Confident</Trait>
+      <Trait>Doesn't go out of own way to do more work than necessary</Trait>
+    </Traits>
+  </Creature>
+  <Creature>
+    <Name>Meng Thizrovod</Name>
+    <Nickname></Nickname>
+    <Sex>Female</Sex>
+    <Attributes>
+      <Strength>599</Strength>
+      <Agility>688</Agility>
+      <Toughness>571</Toughness>
+      <Endurance>1156</Endurance>
+      <Recuperation>1269</Recuperation>
+      <DiseaseResistance>911</DiseaseResistance>
+      <Willpower>1160</Willpower>
+      <Memory>1514</Memory>
+      <Focus>1133</Focus>
+      <Intuition>1363</Intuition>
+      <Patience>1172</Patience>
+      <Empathy>1486</Empathy>
+      <SocialAwareness>1639</SocialAwareness>
+      <Creatvity>1384</Creatvity>
+      <Musicality>1495</Musicality>
+      <AnalyticalAbility>1054</AnalyticalAbility>
+      <LinguisticAbility>942</LinguisticAbility>
+      <SpatialSense>1202</SpatialSense>
+      <KinaestheticSense>823</KinaestheticSense>
+    </Attributes>
+    <Traits>
+      <Trait>Self-conscious</Trait>
+      <Trait>Somewhat reserved</Trait>
+      <Trait>Open-minded to new ideas</Trait>
+      <Trait>Slow to trust others</Trait>
+      <Trait>Does not go out of own way to help others</Trait>
+      <Trait>Doesn't go out of own way to do more work than necessary</Trait>
+    </Traits>
+  </Creature>
+  <Creature>
+    <Name>Tun Erusharoth</Name>
+    <Nickname></Nickname>
+    <Sex>Female</Sex>
+    <Attributes>
+      <Strength>2004</Strength>
+      <Agility>241</Agility>
+      <Toughness>1157</Toughness>
+      <Endurance>1905</Endurance>
+      <Recuperation>1140</Recuperation>
+      <DiseaseResistance>925</DiseaseResistance>
+      <Willpower>1416</Willpower>
+      <Memory>2032</Memory>
+      <Focus>942</Focus>
+      <Intuition>1223</Intuition>
+      <Patience>1032</Patience>
+      <Empathy>1512</Empathy>
+      <SocialAwareness>1298</SocialAwareness>
+      <Creatvity>589</Creatvity>
+      <Musicality>1491</Musicality>
+      <AnalyticalAbility>658</AnalyticalAbility>
+      <LinguisticAbility>1755</LinguisticAbility>
+      <SpatialSense>757</SpatialSense>
+      <KinaestheticSense>971</KinaestheticSense>
+    </Attributes>
+    <Traits>
+      <Trait>Comfortable in social situations</Trait>
+      <Trait>Rarely happy or enthusiastic</Trait>
+      <Trait>Has a fertile imagination</Trait>
+      <Trait>Does not go out of own way to help others</Trait>
+      <Trait>Doesn't like to compromise with others</Trait>
+      <Trait>Immodest</Trait>
+      <Trait>Not easily moved to pity</Trait>
+    </Traits>
+  </Creature>
+</Creatures>
