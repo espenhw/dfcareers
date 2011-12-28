@@ -17,7 +17,7 @@ public class MainForm
     private JList dwarves;
     JTextPane dwarfInfo;
     private JList jobs;
-    private JTextPane jobInfo;
+    JTextPane jobInfo;
     JPanel contentPane;
 
     private JFileChooser chooser = new JFileChooser(new File("."));
@@ -26,7 +26,6 @@ public class MainForm
         chooser.setDialogTitle("Open XML file");
         chooser.setFileFilter(new XmlFileFilter());
         chooser.addChoosableFileFilter(new XmlFileFilter());
-        
 
         browse.addActionListener(new ActionListener()
         {
@@ -47,6 +46,15 @@ public class MainForm
                 }
             }
         });
+        jobs.addListSelectionListener(new ListSelectionListener()
+        {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if (!e.getValueIsAdjusting()) {
+                    Main.displayJob(jobs.getSelectedIndex());
+                }
+            }
+        });
     }
 
     private void createUIComponents() {
@@ -55,7 +63,13 @@ public class MainForm
 
         dwarfInfo = new JTextPane(new HTMLDocument());
         dwarfInfo.setContentType("text/html");
-        dwarfInfo.setText("<html><head><style>table { border: 1px solid black; } th { text-align: right; } td { vertical-align: top }</style></head><body id='body'></body></html>");
+        dwarfInfo.setText("<html><head><style>th { text-align: right; }</style></head><body id='body'></body></html>");
+
+        jobs = new JList(Position.values());
+
+        jobInfo = new JTextPane(new HTMLDocument());
+        jobInfo.setContentType("text/html");
+        jobInfo.setText("<html><head><style>th { text-align: right; }</style></head><body id='body'></body></html>");
     }
 
     private static class XmlFileFilter extends FileFilter

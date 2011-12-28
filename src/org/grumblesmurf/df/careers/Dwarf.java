@@ -56,6 +56,8 @@ public class Dwarf implements Comparable<Dwarf>
                            new Trait(Integer.parseInt(trait.getAttribute("value")),
                                      trait.getTextContent()));
             } else {
+                // TODO: Parse trait text into names and approximate values
+                // for at least Honesty, Compromising and Neurosis
                 traits.put("Trait" + i,
                            new Trait(-1, trait.getTextContent()));
             }
@@ -104,8 +106,8 @@ public class Dwarf implements Comparable<Dwarf>
         }
 
         StringBuilder sb = new StringBuilder();
-        for (Map.Entry<Evaluation, Set<Position>> e: positions.entrySet()){
-            sb.append("<h5>").append(e.getKey()).append("</h5>");
+        for (Map.Entry<Evaluation, Set<Position>> e : positions.entrySet()) {
+            sb.append("<h2>").append(e.getKey()).append("</h2>");
 
             sb.append("<ul>");
             for (Position position : e.getValue()) {
@@ -143,7 +145,7 @@ public class Dwarf implements Comparable<Dwarf>
                 sb.append("<li>").append(trait.description).append("</li>");
             }
         }
-        return sb.append("</ul>").toString();
+        return sb.append("</ul><hr />").toString();
     }
 
     Integer attribute(String key) {
