@@ -25,11 +25,36 @@
       <KinaestheticSense>880</KinaestheticSense>
     </Attributes>
     <Traits>
-      <Trait>Often feels discouraged</Trait>
-      <Trait>Does not go out of own way to help others</Trait>
-      <Trait>Not easily moved to pity</Trait>
-      <Trait>Lacks confidence</Trait>
-      <Trait>Finds rules confining</Trait>
+      <Trait name='Nervousness' value='58'></Trait>
+      <Trait name='Rage' value='41'></Trait>
+      <Trait name='Depression' value='73'>Often feels discouraged</Trait>
+      <Trait name='Neurosis' value='44'></Trait>
+      <Trait name='Urge' value='47'></Trait>
+      <Trait name='Stress' value='43'></Trait>
+      <Trait name='Friendly' value='56'></Trait>
+      <Trait name='Company' value='46'></Trait>
+      <Trait name='Leadership' value='49'></Trait>
+      <Trait name='Activeness' value='45'></Trait>
+      <Trait name='Thrillseeking' value='53'></Trait>
+      <Trait name='Optimism' value='51'></Trait>
+      <Trait name='Imagination' value='41'></Trait>
+      <Trait name='Artistic' value='44'></Trait>
+      <Trait name='Emotion' value='43'></Trait>
+      <Trait name='Adventure' value='59'></Trait>
+      <Trait name='Thinking' value='47'></Trait>
+      <Trait name='Rebelliousness' value='49'></Trait>
+      <Trait name='Trusting' value='56'></Trait>
+      <Trait name='Honesty' value='54'></Trait>
+      <Trait name='Helpfulness' value='40'></Trait>
+      <Trait name='Compromising' value='42'></Trait>
+      <Trait name='Modesty' value='54'></Trait>
+      <Trait name='Compassion' value='40'></Trait>
+      <Trait name='Confidence' value='40'></Trait>
+      <Trait name='Organization' value='53'></Trait>
+      <Trait name='Lawfulness' value='60'></Trait>
+      <Trait name='Excellence' value='49'></Trait>
+      <Trait name='Perseverance' value='49'></Trait>
+      <Trait name='Cautiousness' value='41'></Trait>
     </Traits>
   </Creature>
   <Creature>
@@ -58,18 +83,36 @@
       <KinaestheticSense>634</KinaestheticSense>
     </Attributes>
     <Traits>
-      <Trait>Slow to anger</Trait>
-      <Trait>Occassionally overindulges</Trait>
-      <Trait>Can handle stress</Trait>
-      <Trait>Assertive</Trait>
-      <Trait>Very active</Trait>
-      <Trait>Loves a good thrill</Trait>
-      <Trait>Does not have a great aesthetic sensitivity</Trait>
-      <Trait>Dislikes intellectual discussions</Trait>
-      <Trait>Trusting</Trait>
-      <Trait>Guarded in relationships with others</Trait>
-      <Trait>Willing to compromise with others</Trait>
-      <Trait>Is occasionally given to procrastination</Trait>
+      <Trait name='Nervousness' value='55'></Trait>
+      <Trait name='Rage' value='28'>Slow to anger</Trait>
+      <Trait name='Depression' value='44'></Trait>
+      <Trait name='Neurosis' value='59'></Trait>
+      <Trait name='Urge' value='61'>Occassionally overindulges</Trait>
+      <Trait name='Stress' value='39'>Can handle stress</Trait>
+      <Trait name='Friendly' value='48'></Trait>
+      <Trait name='Company' value='58'></Trait>
+      <Trait name='Leadership' value='65'>Assertive</Trait>
+      <Trait name='Activeness' value='68'>Very active</Trait>
+      <Trait name='Thrillseeking' value='74'>Loves a good thrill</Trait>
+      <Trait name='Optimism' value='47'></Trait>
+      <Trait name='Imagination' value='49'></Trait>
+      <Trait name='Artistic' value='60'></Trait>
+      <Trait name='Emotion' value='44'></Trait>
+      <Trait name='Adventure' value='58'></Trait>
+      <Trait name='Thinking' value='30'>Dislikes intellectual discussions</Trait>
+      <Trait name='Rebelliousness' value='42'></Trait>
+      <Trait name='Trusting' value='68'>Trusting</Trait>
+      <Trait name='Honesty' value='60'></Trait>
+      <Trait name='Helpfulness' value='46'></Trait>
+      <Trait name='Compromising' value='72'>Willing to compromise with others</Trait>
+      <Trait name='Modesty' value='54'></Trait>
+      <Trait name='Compassion' value='46'></Trait>
+      <Trait name='Confidence' value='46'></Trait>
+      <Trait name='Organization' value='51'></Trait>
+      <Trait name='Lawfulness' value='49'></Trait>
+      <Trait name='Excellence' value='55'></Trait>
+      <Trait name='Perseverance' value='33'>Is occasionally given to procrastination</Trait>
+      <Trait name='Cautiousness' value='53'></Trait>
     </Traits>
   </Creature>
   <Creature>
@@ -98,20 +141,36 @@
       <KinaestheticSense>971</KinaestheticSense>
     </Attributes>
     <Traits>
-      <Trait>Very slow to anger</Trait>
-      <Trait>Can handle stress</Trait>
-      <Trait>Assertive</Trait>
-      <Trait>Is not a risk-taker</Trait>
-      <Trait>Often cheerful</Trait>
-      <Trait>Incredibly creative</Trait>
-      <Trait>Likes to try new things</Trait>
-      <Trait>Admires tradition</Trait>
-      <Trait>Slow to trust others</Trait>
-      <Trait>Doesn't like to compromise with others</Trait>
-      <Trait>Modest</Trait>
-      <Trait>Not easily moved to pity</Trait>
-      <Trait>Very disorganized</Trait>
-      <Trait>Doesn't go out of own way to do more work than necessary</Trait>
+      <Trait name='Nervousness' value='57'></Trait>
+      <Trait name='Rage' value='17'>Very slow to anger</Trait>
+      <Trait name='Depression' value='56'></Trait>
+      <Trait name='Neurosis' value='49'></Trait>
+      <Trait name='Urge' value='56'></Trait>
+      <Trait name='Stress' value='40'></Trait>
+      <Trait name='Friendly' value='59'></Trait>
+      <Trait name='Company' value='45'></Trait>
+      <Trait name='Leadership' value='71'>Assertive</Trait>
+      <Trait name='Activeness' value='59'></Trait>
+      <Trait name='Thrillseeking' value='35'>Is not a risk-taker</Trait>
+      <Trait name='Optimism' value='65'>Often cheerful</Trait>
+      <Trait name='Imagination' value='84'>Incredibly creative</Trait>
+      <Trait name='Artistic' value='57'></Trait>
+      <Trait name='Emotion' value='56'></Trait>
+      <Trait name='Adventure' value='74'>Likes to try new things</Trait>
+      <Trait name='Thinking' value='51'></Trait>
+      <Trait name='Rebelliousness' value='34'>Admires tradition</Trait>
+      <Trait name='Trusting' value='31'>Slow to trust others</Trait>
+      <Trait name='Honesty' value='50'></Trait>
+      <Trait name='Helpfulness' value='52'></Trait>
+      <Trait name='Compromising' value='28'>Doesn't like to compromise with others</Trait>
+      <Trait name='Modesty' value='67'>Modest</Trait>
+      <Trait name='Compassion' value='29'>Not easily moved to pity</Trait>
+      <Trait name='Confidence' value='48'></Trait>
+      <Trait name='Organization' value='14'>Very disorganized</Trait>
+      <Trait name='Lawfulness' value='51'></Trait>
+      <Trait name='Excellence' value='60'></Trait>
+      <Trait name='Perseverance' value='52'></Trait>
+      <Trait name='Cautiousness' value='51'></Trait>
     </Traits>
   </Creature>
   <Creature>
@@ -140,14 +199,36 @@
       <KinaestheticSense>868</KinaestheticSense>
     </Attributes>
     <Traits>
-      <Trait>Is often nervous</Trait>
-      <Trait>Occassionally overindulges</Trait>
-      <Trait>Dislikes intellectual discussions</Trait>
-      <Trait>Put off by authority and tradition</Trait>
-      <Trait>Slow to trust others</Trait>
-      <Trait>Does not go out of own way to help others</Trait>
-      <Trait>Confident</Trait>
-      <Trait>Finds rules confining</Trait>
+      <Trait name='Nervousness' value='68'>Is often nervous</Trait>
+      <Trait name='Rage' value='49'></Trait>
+      <Trait name='Depression' value='51'></Trait>
+      <Trait name='Neurosis' value='41'></Trait>
+      <Trait name='Urge' value='62'>Occassionally overindulges</Trait>
+      <Trait name='Stress' value='46'></Trait>
+      <Trait name='Friendly' value='58'></Trait>
+      <Trait name='Company' value='47'></Trait>
+      <Trait name='Leadership' value='55'></Trait>
+      <Trait name='Activeness' value='51'></Trait>
+      <Trait name='Thrillseeking' value='51'></Trait>
+      <Trait name='Optimism' value='47'></Trait>
+      <Trait name='Imagination' value='42'></Trait>
+      <Trait name='Artistic' value='44'></Trait>
+      <Trait name='Emotion' value='52'></Trait>
+      <Trait name='Adventure' value='42'></Trait>
+      <Trait name='Thinking' value='27'>Dislikes intellectual discussions</Trait>
+      <Trait name='Rebelliousness' value='75'>Put off by authority and tradition</Trait>
+      <Trait name='Trusting' value='40'></Trait>
+      <Trait name='Honesty' value='54'></Trait>
+      <Trait name='Helpfulness' value='35'>Does not go out of own way to help others</Trait>
+      <Trait name='Compromising' value='58'></Trait>
+      <Trait name='Modesty' value='46'></Trait>
+      <Trait name='Compassion' value='55'></Trait>
+      <Trait name='Confidence' value='67'>Confident</Trait>
+      <Trait name='Organization' value='50'></Trait>
+      <Trait name='Lawfulness' value='60'></Trait>
+      <Trait name='Excellence' value='47'></Trait>
+      <Trait name='Perseverance' value='43'></Trait>
+      <Trait name='Cautiousness' value='57'></Trait>
     </Traits>
   </Creature>
   <Creature>
@@ -176,16 +257,36 @@
       <KinaestheticSense>909</KinaestheticSense>
     </Attributes>
     <Traits>
-      <Trait>Slow to anger</Trait>
-      <Trait>Comfortable in social situations</Trait>
-      <Trait>Enjoys being in crowds</Trait>
-      <Trait>Isn't given to flights of fancy</Trait>
-      <Trait>Regards intellectual exercises as a waste of energy</Trait>
-      <Trait>Guarded in relationships with others</Trait>
-      <Trait>Does not go out of own way to help others</Trait>
-      <Trait>Not easily moved to pity</Trait>
-      <Trait>Confident</Trait>
-      <Trait>Doesn't go out of own way to do more work than necessary</Trait>
+      <Trait name='Nervousness' value='45'></Trait>
+      <Trait name='Rage' value='27'>Slow to anger</Trait>
+      <Trait name='Depression' value='52'></Trait>
+      <Trait name='Neurosis' value='28'>Comfortable in social situations</Trait>
+      <Trait name='Urge' value='56'></Trait>
+      <Trait name='Stress' value='47'></Trait>
+      <Trait name='Friendly' value='58'></Trait>
+      <Trait name='Company' value='87'>Enjoys being in crowds</Trait>
+      <Trait name='Leadership' value='46'></Trait>
+      <Trait name='Activeness' value='42'></Trait>
+      <Trait name='Thrillseeking' value='43'></Trait>
+      <Trait name='Optimism' value='57'></Trait>
+      <Trait name='Imagination' value='60'></Trait>
+      <Trait name='Artistic' value='51'></Trait>
+      <Trait name='Emotion' value='54'></Trait>
+      <Trait name='Adventure' value='45'></Trait>
+      <Trait name='Thinking' value='19'>Regards intellectual exercises as a waste of energy</Trait>
+      <Trait name='Rebelliousness' value='48'></Trait>
+      <Trait name='Trusting' value='41'></Trait>
+      <Trait name='Honesty' value='33'>Guarded in relationships with others</Trait>
+      <Trait name='Helpfulness' value='25'>Does not go out of own way to help others</Trait>
+      <Trait name='Compromising' value='53'></Trait>
+      <Trait name='Modesty' value='56'></Trait>
+      <Trait name='Compassion' value='26'>Not easily moved to pity</Trait>
+      <Trait name='Confidence' value='63'>Confident</Trait>
+      <Trait name='Organization' value='42'></Trait>
+      <Trait name='Lawfulness' value='44'></Trait>
+      <Trait name='Excellence' value='40'></Trait>
+      <Trait name='Perseverance' value='47'></Trait>
+      <Trait name='Cautiousness' value='50'></Trait>
     </Traits>
   </Creature>
   <Creature>
@@ -214,12 +315,36 @@
       <KinaestheticSense>823</KinaestheticSense>
     </Attributes>
     <Traits>
-      <Trait>Self-conscious</Trait>
-      <Trait>Somewhat reserved</Trait>
-      <Trait>Open-minded to new ideas</Trait>
-      <Trait>Slow to trust others</Trait>
-      <Trait>Does not go out of own way to help others</Trait>
-      <Trait>Doesn't go out of own way to do more work than necessary</Trait>
+      <Trait name='Nervousness' value='47'></Trait>
+      <Trait name='Rage' value='57'></Trait>
+      <Trait name='Depression' value='41'></Trait>
+      <Trait name='Neurosis' value='72'>Self-conscious</Trait>
+      <Trait name='Urge' value='48'></Trait>
+      <Trait name='Stress' value='52'></Trait>
+      <Trait name='Friendly' value='26'>Somewhat reserved</Trait>
+      <Trait name='Company' value='46'></Trait>
+      <Trait name='Leadership' value='42'></Trait>
+      <Trait name='Activeness' value='56'></Trait>
+      <Trait name='Thrillseeking' value='43'></Trait>
+      <Trait name='Optimism' value='43'></Trait>
+      <Trait name='Imagination' value='53'></Trait>
+      <Trait name='Artistic' value='46'></Trait>
+      <Trait name='Emotion' value='42'></Trait>
+      <Trait name='Adventure' value='47'></Trait>
+      <Trait name='Thinking' value='73'>Open-minded to new ideas</Trait>
+      <Trait name='Rebelliousness' value='56'></Trait>
+      <Trait name='Trusting' value='40'></Trait>
+      <Trait name='Honesty' value='48'></Trait>
+      <Trait name='Helpfulness' value='60'></Trait>
+      <Trait name='Compromising' value='55'></Trait>
+      <Trait name='Modesty' value='45'></Trait>
+      <Trait name='Compassion' value='47'></Trait>
+      <Trait name='Confidence' value='42'></Trait>
+      <Trait name='Organization' value='45'></Trait>
+      <Trait name='Lawfulness' value='45'></Trait>
+      <Trait name='Excellence' value='60'></Trait>
+      <Trait name='Perseverance' value='55'></Trait>
+      <Trait name='Cautiousness' value='43'></Trait>
     </Traits>
   </Creature>
   <Creature>
@@ -248,13 +373,36 @@
       <KinaestheticSense>971</KinaestheticSense>
     </Attributes>
     <Traits>
-      <Trait>Comfortable in social situations</Trait>
-      <Trait>Rarely happy or enthusiastic</Trait>
-      <Trait>Has a fertile imagination</Trait>
-      <Trait>Does not go out of own way to help others</Trait>
-      <Trait>Doesn't like to compromise with others</Trait>
-      <Trait>Immodest</Trait>
-      <Trait>Not easily moved to pity</Trait>
+      <Trait name='Nervousness' value='46'></Trait>
+      <Trait name='Rage' value='55'></Trait>
+      <Trait name='Depression' value='53'></Trait>
+      <Trait name='Neurosis' value='39'>Comfortable in social situations</Trait>
+      <Trait name='Urge' value='53'></Trait>
+      <Trait name='Stress' value='52'></Trait>
+      <Trait name='Friendly' value='46'></Trait>
+      <Trait name='Company' value='51'></Trait>
+      <Trait name='Leadership' value='42'></Trait>
+      <Trait name='Activeness' value='59'></Trait>
+      <Trait name='Thrillseeking' value='42'></Trait>
+      <Trait name='Optimism' value='31'>Rarely happy or enthusiastic</Trait>
+      <Trait name='Imagination' value='62'>Has a fertile imagination</Trait>
+      <Trait name='Artistic' value='56'></Trait>
+      <Trait name='Emotion' value='42'></Trait>
+      <Trait name='Adventure' value='47'></Trait>
+      <Trait name='Thinking' value='53'></Trait>
+      <Trait name='Rebelliousness' value='54'></Trait>
+      <Trait name='Trusting' value='59'></Trait>
+      <Trait name='Honesty' value='56'></Trait>
+      <Trait name='Helpfulness' value='60'></Trait>
+      <Trait name='Compromising' value='60'></Trait>
+      <Trait name='Modesty' value='60'></Trait>
+      <Trait name='Compassion' value='25'>Not easily moved to pity</Trait>
+      <Trait name='Confidence' value='52'></Trait>
+      <Trait name='Organization' value='55'></Trait>
+      <Trait name='Lawfulness' value='57'></Trait>
+      <Trait name='Excellence' value='43'></Trait>
+      <Trait name='Perseverance' value='55'></Trait>
+      <Trait name='Cautiousness' value='52'></Trait>
     </Traits>
   </Creature>
 </Creatures>

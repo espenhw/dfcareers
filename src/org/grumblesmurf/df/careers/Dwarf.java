@@ -7,21 +7,18 @@ import org.w3c.dom.NodeList;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.html.HTMLDocument;
 import java.io.IOException;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Dwarf implements Comparable<Dwarf>
 {
     final String name;
     private final String nickName;
     final String sex;
-    private final Map<String, Integer> attributes;
-    private final List<String> traits;
+    final Map<String, Integer> attributes;
+    final Map<String, Trait> traits;
     private final String displayName;
 
-    public Dwarf(String name, String nickName, String sex, Map<String, Integer> attributes, List<String> traits) {
+    public Dwarf(String name, String nickName, String sex, Map<String, Integer> attributes, Map<String, Trait> traits) {
         this.name = name;
         this.nickName = nickName;
         this.sex = sex;
@@ -51,10 +48,17 @@ public class Dwarf implements Comparable<Dwarf>
         }
 
         NodeList traitsElements = creature.getElementsByTagName("Trait");
-        List<String> traits = new LinkedList<String>();
+        Map<String, Trait> traits = new LinkedHashMap<String, Trait>();
         for (int i = 0; i < traitsElements.getLength(); i++) {
-            Node trait = traitsElements.item(i);
-            traits.add(trait.getTextContent());
+            Element trait = (Element) traitsElements.item(i);
+            if (trait.hasAttribute("name")) {
+                traits.put(trait.getAttribute("name"),
+                           new Trait(Integer.parseInt(trait.getAttribute("value")),
+                                     trait.getTextContent()));
+            } else {
+                traits.put("Trait" + i,
+                           new Trait(-1, trait.getTextContent()));
+            }
         }
 
         return new Dwarf(name, nickName, sex, attributes, traits);
@@ -85,6 +89,31 @@ public class Dwarf implements Comparable<Dwarf>
         d.insertBeforeEnd(body, mainLayout());
         d.insertBeforeEnd(d.getElement("left"), attributesTable());
         d.insertBeforeEnd(d.getElement("right"), traitsList());
+        d.insertBeforeEnd(d.getElement("right"), positionList());
+    }
+
+    private String positionList() {
+        Map<Evaluation, Set<Position>> positions = new EnumMap<Evaluation, Set<Position>>(Evaluation.class);
+
+        for (Position position : Position.values()) {
+            Evaluation evaluation = position.evaluate(this);
+            if (!positions.containsKey(evaluation)) {
+                positions.put(evaluation, EnumSet.noneOf(Position.class));
+            }
+            positions.get(evaluation).add(position);
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for (Map.Entry<Evaluation, Set<Position>> e: positions.entrySet()){
+            sb.append("<h5>").append(e.getKey()).append("</h5>");
+
+            sb.append("<ul>");
+            for (Position position : e.getValue()) {
+                sb.append("<li>").append(position).append("</li>");
+            }
+            sb.append("</ul>");
+        }
+        return sb.toString();
     }
 
     private String mainLayout() {
@@ -109,9 +138,30 @@ public class Dwarf implements Comparable<Dwarf>
 
     private String traitsList() {
         StringBuilder sb = new StringBuilder("<ul>");
-        for (String trait : traits) {
-            sb.append("<li>").append(trait).append("</li>");
+        for (Trait trait : traits.values()) {
+            if (!trait.description.isEmpty()) {
+                sb.append("<li>").append(trait.description).append("</li>");
+            }
         }
         return sb.append("</ul>").toString();
+    }
+
+    Integer attribute(String key) {
+        return attributes.get(key);
+    }
+
+    Trait trait(String key) {
+        return traits.get(key);
+    }
+
+    static class Trait
+    {
+        final int value;
+        private final String description;
+
+        private Trait(int value, String description) {
+            this.value = value;
+            this.description = description;
+        }
     }
 }
