@@ -8,6 +8,8 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.html.HTMLDocument;
 import java.io.IOException;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 public class Dwarf implements Comparable<Dwarf>
@@ -16,13 +18,15 @@ public class Dwarf implements Comparable<Dwarf>
     private final String nickName;
     final String sex;
     private final Map<String, Integer> attributes;
+    private final List<String> traits;
     private final String displayName;
 
-    public Dwarf(String name, String nickName, String sex, Map<String, Integer> attributes) {
+    public Dwarf(String name, String nickName, String sex, Map<String, Integer> attributes, List<String> traits) {
         this.name = name;
         this.nickName = nickName;
         this.sex = sex;
         this.attributes = attributes;
+        this.traits = traits;
 
         if (nickName.isEmpty()) {
             this.displayName = name;
@@ -45,7 +49,15 @@ public class Dwarf implements Comparable<Dwarf>
                 attributes.put(item.getNodeName(), Integer.valueOf(item.getTextContent()));
             }
         }
-        return new Dwarf(name, nickName, sex, attributes);
+
+        NodeList traitsElements = creature.getElementsByTagName("Trait");
+        List<String> traits = new LinkedList<String>();
+        for (int i = 0; i < traitsElements.getLength(); i++) {
+            Node trait = traitsElements.item(i);
+            traits.add(trait.getTextContent());
+        }
+
+        return new Dwarf(name, nickName, sex, attributes, traits);
     }
 
     private static Element firstChildNamed(String name, Element parent) {
@@ -69,12 +81,22 @@ public class Dwarf implements Comparable<Dwarf>
     public void renderTo(javax.swing.text.Element body)
         throws IOException, BadLocationException {
         HTMLDocument d = (HTMLDocument) body.getDocument();
-        d.insertBeforeEnd(body, String.format("<h1>%s</h1>", displayName));
-        d.insertBeforeEnd(body, attributesTable());
+        d.insertBeforeEnd(body, nameHeader());
+        d.insertBeforeEnd(body, mainLayout());
+        d.insertBeforeEnd(d.getElement("left"), attributesTable());
+        d.insertBeforeEnd(d.getElement("right"), traitsList());
+    }
+
+    private String mainLayout() {
+        return "<table valign='top'><tr><td id='left'></td><td id='right'></td></tr></table>";
+    }
+
+    private String nameHeader() {
+        return String.format("<h1>%s</h1>", displayName);
     }
 
     private String attributesTable() {
-        StringBuilder sb = new StringBuilder("<table style='float: left;'>");
+        StringBuilder sb = new StringBuilder("<table>");
         for (Map.Entry<String, Integer> entry : attributes.entrySet()) {
             sb.append("<tr>")
                 .append("<th>").append(entry.getKey()).append("</th>")
@@ -83,5 +105,13 @@ public class Dwarf implements Comparable<Dwarf>
         }
 
         return sb.append("</table>").toString();
+    }
+
+    private String traitsList() {
+        StringBuilder sb = new StringBuilder("<ul>");
+        for (String trait : traits) {
+            sb.append("<li>").append(trait).append("</li>");
+        }
+        return sb.append("</ul>").toString();
     }
 }
