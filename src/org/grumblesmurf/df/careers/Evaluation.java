@@ -16,7 +16,7 @@ public enum Evaluation
     VeryPoor(9) {
         @Override
         public String toString() {
-            return "Very good";
+            return "Very poor";
         }
     },
     Horrible(Integer.MIN_VALUE),
