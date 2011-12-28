@@ -1,7 +1,10 @@
 package org.grumblesmurf.df.careers;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.filechooser.FileFilter;
+import javax.swing.text.html.HTMLDocument;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -12,7 +15,7 @@ public class MainForm
     private JTextField filename;
     private JButton browse;
     private JList dwarves;
-    private JTextPane dwarfInfo;
+    JTextPane dwarfInfo;
     private JList jobs;
     private JTextPane jobInfo;
     JPanel contentPane;
@@ -35,10 +38,24 @@ public class MainForm
                 }
             }
         });
+        dwarves.addListSelectionListener(new ListSelectionListener()
+        {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if (!e.getValueIsAdjusting()) {
+                    Main.displayDwarf(dwarves.getSelectedIndex());
+                }
+            }
+        });
     }
 
     private void createUIComponents() {
         dwarves = new JList(Main.dwarvesModel());
+        dwarves.setCellRenderer(new DwarfRenderer());
+
+        dwarfInfo = new JTextPane(new HTMLDocument());
+        dwarfInfo.setContentType("text/html");
+        dwarfInfo.setText("<html><body id='body'></body></html>");
     }
 
     private static class XmlFileFilter extends FileFilter

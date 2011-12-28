@@ -6,9 +6,12 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import javax.swing.*;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.html.HTMLDocument;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -20,13 +23,15 @@ public class Main
 {
     private static JFrame frame;
     private static DwarvesListModel dwarvesList = new DwarvesListModel();
+    private static MainForm form;
 
     public static void main(String[] args)
         throws ClassNotFoundException, UnsupportedLookAndFeelException, IllegalAccessException, InstantiationException {
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 
         frame = new JFrame("DFCareers");
-        frame.setContentPane(new MainForm().contentPane);
+        form = new MainForm();
+        frame.setContentPane(form.contentPane);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 600);
         frame.setVisible(true);
@@ -57,6 +62,21 @@ public class Main
 
     public static ListModel dwarvesModel() {
         return dwarvesList;
+    }
+
+    public static void displayDwarf(int index) {
+        Dwarf dwarf = dwarvesList.getElementAt(index);
+        HTMLDocument document = (HTMLDocument) form.dwarfInfo.getDocument();
+        javax.swing.text.Element body = document.getElement("body");
+        try {
+            document.setOuterHTML(body, "<body id='body'></body>");
+            body = document.getElement("body");
+            dwarf.renderTo(body);
+        } catch (BadLocationException e) {
+            e.printStackTrace();  // FIXME: Do something
+        } catch (IOException e) {
+            e.printStackTrace();  // FIXME: Do something
+        }
     }
 
     private static class DwarvesListModel extends AbstractListModel
