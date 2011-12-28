@@ -63,7 +63,7 @@ public class Main
         HTMLDocument document = (HTMLDocument) form.dwarfInfo.getDocument();
         try {
             javax.swing.text.Element body = newBodyElement(document);
-            dwarf.renderTo(body);
+            dwarf.renderTo(body, form.showOnlyPositive.isSelected());
         } catch (BadLocationException e) {
             reportError(e);
         } catch (IOException e) {
@@ -85,6 +85,10 @@ public class Main
         Map<Evaluation, Set<Dwarf>> eval = new EnumMap<Evaluation, Set<Dwarf>>(Evaluation.class);
         for (Dwarf dwarf : dwarvesList) {
             Evaluation evaluation = position.evaluate(dwarf);
+            if (form.showOnlyPositive.isSelected() && evaluation.ordinal() > Evaluation.Reasonable.ordinal()) {
+                continue;
+            }
+
             if (!eval.containsKey(evaluation)) {
                 eval.put(evaluation, new TreeSet<Dwarf>());
             }
@@ -96,7 +100,7 @@ public class Main
             javax.swing.text.Element body = newBodyElement(document);
 
             StringBuilder sb = new StringBuilder();
-            for (Map.Entry<Evaluation, Set<Dwarf>> e: eval.entrySet()) {
+            for (Map.Entry<Evaluation, Set<Dwarf>> e : eval.entrySet()) {
                 sb.append("<h2>").append(e.getKey()).append("</h2><ul>");
                 for (Dwarf dwarf : e.getValue()) {
                     sb.append("<li>").append(dwarf).append("</li>");

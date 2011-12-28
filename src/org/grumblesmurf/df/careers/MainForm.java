@@ -19,6 +19,9 @@ public class MainForm
     private JList jobs;
     JTextPane jobInfo;
     JPanel contentPane;
+    JCheckBox showOnlyPositive;
+    private JPanel dwarvesPanel;
+    private JPanel jobsPanel;
 
     private JFileChooser chooser = new JFileChooser(new File("."));
 
@@ -51,6 +54,17 @@ public class MainForm
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 if (!e.getValueIsAdjusting()) {
+                    Main.displayJob(jobs.getSelectedIndex());
+                }
+            }
+        });
+        showOnlyPositive.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (tabbedPane1.getSelectedComponent() == dwarvesPanel) {
+                    Main.displayDwarf(dwarves.getSelectedIndex());
+                } else {
                     Main.displayJob(jobs.getSelectedIndex());
                 }
             }

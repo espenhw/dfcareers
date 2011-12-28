@@ -84,21 +84,25 @@ public class Dwarf implements Comparable<Dwarf>
         return displayName;
     }
 
-    public void renderTo(javax.swing.text.Element body)
+    public void renderTo(javax.swing.text.Element body, boolean showOnlyPositive)
         throws IOException, BadLocationException {
         HTMLDocument d = (HTMLDocument) body.getDocument();
         d.insertBeforeEnd(body, nameHeader());
         d.insertBeforeEnd(body, mainLayout());
         d.insertBeforeEnd(d.getElement("left"), attributesTable());
         d.insertBeforeEnd(d.getElement("right"), traitsList());
-        d.insertBeforeEnd(d.getElement("right"), positionList());
+        d.insertBeforeEnd(d.getElement("right"), positionList(showOnlyPositive));
     }
 
-    private String positionList() {
+    private String positionList(boolean showOnlyPositive) {
         Map<Evaluation, Set<Position>> positions = new EnumMap<Evaluation, Set<Position>>(Evaluation.class);
 
         for (Position position : Position.values()) {
             Evaluation evaluation = position.evaluate(this);
+            if (showOnlyPositive && evaluation.ordinal() > Evaluation.Reasonable.ordinal()) {
+                continue;
+            }
+
             if (!positions.containsKey(evaluation)) {
                 positions.put(evaluation, EnumSet.noneOf(Position.class));
             }
