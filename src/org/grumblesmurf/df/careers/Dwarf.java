@@ -18,7 +18,12 @@ public class Dwarf implements Comparable<Dwarf>
     final Map<String, Trait> traits;
     private final String displayName;
 
-    public Dwarf(String name, String nickName, String sex, Map<String, Integer> attributes, Map<String, Trait> traits) {
+    public static final Dwarf NODWARF =
+        new Dwarf("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", "", "Male", Collections.<String, Integer>emptyMap(),
+                  Collections.<String, Trait>emptyMap());
+
+    private Dwarf(String name, String nickName, String sex, Map<String, Integer> attributes,
+                  Map<String, Trait> traits) {
         this.name = name;
         this.nickName = nickName;
         this.sex = sex;
@@ -169,5 +174,15 @@ public class Dwarf implements Comparable<Dwarf>
             this.value = value;
             this.description = description;
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return o instanceof Dwarf && compareTo((Dwarf) o) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return displayName != null ? displayName.hashCode() : 0;
     }
 }

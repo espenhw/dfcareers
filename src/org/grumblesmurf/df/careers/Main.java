@@ -45,6 +45,8 @@ public class Main
                 newDwarves.add(Dwarf.from((Element) creature));
             }
             dwarvesList.addAll(newDwarves);
+
+            generateEmbarkHelp();
         } catch (Exception e) {
             reportError(e);
         }
@@ -115,6 +117,56 @@ public class Main
         }
     }
 
+    private static void generateEmbarkHelp() {
+        Set<Position> positionsToFill =
+            EnumSet.of(Position.Broker, Position.Manager, Position.RecordKeeper, Position.Carpenter,
+                       Position.Woodcutter,
+                       Position.Mason, Position.Grower, Position.Brewer, Position.Mechanic,
+                       Position.Miner);
+        Map<Position, NavigableSet<DwarfRanking>> rankings = pickDwarvesFor(positionsToFill);
+        
+        HTMLDocument document = (HTMLDocument) form.embarkHelp.getDocument();
+        try {
+            javax.swing.text.Element body = newBodyElement(document);
+            StringBuilder sb = new StringBuilder();
+            for (Map.Entry<Position, NavigableSet<DwarfRanking>> entry : rankings.entrySet()) {
+                sb.append("<h2>").append(entry.getKey()).append("</h2>");
+                DwarfRanking best = entry.getValue().first();
+                sb.append("<p>Your best choice is ").append(best).append(".</p>");
+
+                SortedSet<DwarfRanking> suitableDwarves =
+                    entry.getValue().headSet(new DwarfRanking(Dwarf.NODWARF, Evaluation.Subpar), false);
+                suitableDwarves.remove(best);
+                if (!suitableDwarves.isEmpty()) {
+                    sb.append("<p>Other reasonable choices are ");
+                    for (DwarfRanking dwarfRanking : suitableDwarves) {
+                        sb.append(dwarfRanking).append(", ");
+                    }
+                    sb.append("</p>");
+                }
+            }
+
+            document.insertBeforeEnd(body, sb.toString());
+        } catch (BadLocationException e) {
+            reportError(e);
+        } catch (IOException e) {
+            reportError(e);
+        }
+    }
+
+    private static Map<Position, NavigableSet<DwarfRanking>> pickDwarvesFor(Set<Position> positionsToFill) {
+        Map<Position, NavigableSet<DwarfRanking>> result = new TreeMap<Position, NavigableSet<DwarfRanking>>();
+        for (Position position : positionsToFill) {
+            NavigableSet<DwarfRanking> rankings = new TreeSet<DwarfRanking>();
+            for (Dwarf dwarf : dwarvesList) {
+                Evaluation eval = position.evaluate(dwarf);
+                rankings.add(new DwarfRanking(dwarf, eval));
+            }
+            result.put(position, rankings);
+        }
+        return result;
+    }
+
     private static class DwarvesListModel extends AbstractListModel implements Iterable<Dwarf>
     {
         private final List<Dwarf> dwarves;
@@ -146,6 +198,40 @@ public class Main
         @Override
         public Iterator<Dwarf> iterator() {
             return dwarves.iterator();
+        }
+    }
+
+    private static class DwarfRanking implements Comparable<DwarfRanking>
+    {
+        private final Evaluation eval;
+        private final Dwarf dwarf;
+
+        private DwarfRanking(Dwarf dwarf, Evaluation eval) {
+            this.dwarf = dwarf;
+            this.eval = eval;
+        }
+
+        @Override
+        public int compareTo(DwarfRanking o) {
+            int i = eval.compareTo(o.eval);            
+            return i == 0 ? dwarf.compareTo(o.dwarf) : i;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            return o instanceof DwarfRanking && compareTo((DwarfRanking) o) == 0;
+        }
+
+        @Override
+        public String toString() {
+            return dwarf.toString() + " (" + eval + ")";
+        }
+
+        @Override
+        public int hashCode() {
+            int result = eval.hashCode();
+            result = 31 * result + dwarf.hashCode();
+            return result;
         }
     }
 }

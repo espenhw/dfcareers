@@ -22,6 +22,7 @@ public class MainForm
     JCheckBox showOnlyPositive;
     private JPanel dwarvesPanel;
     private JPanel jobsPanel;
+    JTextPane embarkHelp;
 
     private JFileChooser chooser = new JFileChooser(new File("."));
 
@@ -84,6 +85,10 @@ public class MainForm
         jobInfo = new JTextPane(new HTMLDocument());
         jobInfo.setContentType("text/html");
         jobInfo.setText("<html><head><style>th { text-align: right; }</style></head><body id='body'></body></html>");
+
+        embarkHelp = new JTextPane(new HTMLDocument());
+        embarkHelp.setContentType("text/html");
+        embarkHelp.setText("<html><head><style>th { text-align: right; }</style></head><body id='body'></body></html>");
     }
 
     private static class XmlFileFilter extends FileFilter
