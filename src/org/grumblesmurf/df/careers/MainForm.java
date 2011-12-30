@@ -8,6 +8,8 @@ import javax.swing.text.html.HTMLDocument;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.util.Arrays;
+import java.util.Comparator;
 
 public class MainForm
 {
@@ -80,7 +82,15 @@ public class MainForm
         dwarfInfo.setContentType("text/html");
         dwarfInfo.setText("<html><head><style>th { text-align: right; }</style></head><body id='body'></body></html>");
 
-        jobs = new JList(Position.values());
+        Position[] values = Position.values();
+        Arrays.sort(values, new Comparator<Position>()
+        {
+            @Override
+            public int compare(Position o1, Position o2) {
+                return o1.name().compareTo(o2.name());
+            }
+        });
+        jobs = new JList(values);
 
         jobInfo = new JTextPane(new HTMLDocument());
         jobInfo.setContentType("text/html");
