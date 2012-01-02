@@ -78,9 +78,7 @@ public class MainForm
         dwarves = new JList(Main.dwarvesModel());
         dwarves.setCellRenderer(new DwarfRenderer());
 
-        dwarfInfo = new JTextPane(new HTMLDocument());
-        dwarfInfo.setContentType("text/html");
-        dwarfInfo.setText("<html><head><style>th { text-align: right; }</style></head><body id='body'></body></html>");
+        dwarfInfo = newHtmlPane();
 
         Position[] values = Position.values();
         Arrays.sort(values, new Comparator<Position>()
@@ -92,13 +90,16 @@ public class MainForm
         });
         jobs = new JList(values);
 
-        jobInfo = new JTextPane(new HTMLDocument());
-        jobInfo.setContentType("text/html");
-        jobInfo.setText("<html><head><style>th { text-align: right; }</style></head><body id='body'></body></html>");
+        jobInfo = newHtmlPane();
 
-        embarkHelp = new JTextPane(new HTMLDocument());
-        embarkHelp.setContentType("text/html");
-        embarkHelp.setText("<html><head><style>th { text-align: right; }</style></head><body id='body'></body></html>");
+        embarkHelp = newHtmlPane();
+    }
+
+    private JTextPane newHtmlPane() {
+        JTextPane tmp = new JTextPane(new HTMLDocument());
+        tmp.setContentType("text/html");
+        tmp.setText("<html><head><style>th { text-align: right; }</style></head><body id='body'></body></html>");
+        return tmp;
     }
 
     private static class XmlFileFilter extends FileFilter
