@@ -25,8 +25,10 @@ public class MainForm
     private JPanel dwarvesPanel;
     private JPanel jobsPanel;
     JTextPane embarkHelp;
+    private JButton reload;
 
     private JFileChooser chooser = new JFileChooser(new File("."));
+    private File file;
 
     public MainForm() {
         chooser.setDialogTitle("Open XML file");
@@ -37,8 +39,9 @@ public class MainForm
         {
             public void actionPerformed(ActionEvent e) {
                 if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-                    File file = chooser.getSelectedFile();
+                    file = chooser.getSelectedFile();
                     filename.setText(file.getPath());
+                    reload.setEnabled(true);
                     Main.readDwarvesFrom(file);
                 }
             }
@@ -70,6 +73,13 @@ public class MainForm
                 } else {
                     Main.displayJob(jobs.getSelectedIndex());
                 }
+            }
+        });
+        reload.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.readDwarvesFrom(file);
             }
         });
     }
