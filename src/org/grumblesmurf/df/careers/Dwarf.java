@@ -104,7 +104,7 @@ public class Dwarf implements Comparable<Dwarf>
 
         for (Position position : Position.values()) {
             Evaluation evaluation = position.evaluate(this);
-            if (showOnlyPositive && evaluation.ordinal() > Evaluation.Reasonable.ordinal()) {
+            if (showOnlyPositive && evaluation.isPositive()) {
                 continue;
             }
 

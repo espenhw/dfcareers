@@ -36,4 +36,8 @@ public enum Evaluation
         }
         return Unsuitable;
     }
+
+    boolean isPositive() {
+        return ordinal() > Reasonable.ordinal();
+    }
 }

@@ -87,7 +87,7 @@ public class Main
         Map<Evaluation, Set<Dwarf>> eval = new EnumMap<Evaluation, Set<Dwarf>>(Evaluation.class);
         for (Dwarf dwarf : dwarvesList) {
             Evaluation evaluation = position.evaluate(dwarf);
-            if (form.showOnlyPositive.isSelected() && evaluation.ordinal() > Evaluation.Reasonable.ordinal()) {
+            if (form.showOnlyPositive.isSelected() && evaluation.isPositive()) {
                 continue;
             }
 
