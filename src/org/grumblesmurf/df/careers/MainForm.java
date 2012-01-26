@@ -60,7 +60,7 @@ public class MainForm
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 if (!e.getValueIsAdjusting()) {
-                    Main.displayJob(jobs.getSelectedIndex());
+                    Main.displayJob(jobs.getSelectedValue().toString());
                 }
             }
         });
@@ -71,7 +71,7 @@ public class MainForm
                 if (tabbedPane1.getSelectedComponent() == dwarvesPanel) {
                     Main.displayDwarf(dwarves.getSelectedIndex());
                 } else {
-                    Main.displayJob(jobs.getSelectedIndex());
+                    Main.displayJob(jobs.getSelectedValue().toString());
                 }
             }
         });

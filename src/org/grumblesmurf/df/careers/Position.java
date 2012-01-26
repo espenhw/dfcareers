@@ -136,4 +136,8 @@ public enum Position
         String name = name();
         return name.replaceAll("(.)([A-Z])", "$1 $2");
     }
+    
+    public static Position fromString(String s) {
+        return valueOf(s.replaceAll("(.) (.)", "$1$2"));
+    }
 }

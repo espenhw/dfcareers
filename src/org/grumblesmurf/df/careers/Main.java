@@ -1,9 +1,6 @@
 package org.grumblesmurf.df.careers;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import org.w3c.dom.*;
 
 import javax.swing.*;
 import javax.swing.text.BadLocationException;
@@ -81,8 +78,8 @@ public class Main
         return body;
     }
 
-    public static void displayJob(int selectedIndex) {
-        Position position = Position.values()[selectedIndex];
+    public static void displayJob(String selected) {
+        Position position = Position.fromString(selected);
 
         Map<Evaluation, Set<Dwarf>> eval = new EnumMap<Evaluation, Set<Dwarf>>(Evaluation.class);
         for (Dwarf dwarf : dwarvesList) {
@@ -102,6 +99,7 @@ public class Main
             javax.swing.text.Element body = newBodyElement(document);
 
             StringBuilder sb = new StringBuilder();
+            sb.append("<h1>").append(position).append("</h1>");
             for (Map.Entry<Evaluation, Set<Dwarf>> e : eval.entrySet()) {
                 sb.append("<h2>").append(e.getKey()).append("</h2><ul>");
                 for (Dwarf dwarf : e.getValue()) {
