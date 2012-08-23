@@ -50,6 +50,7 @@ public class Main
     }
 
     private static void reportError(Exception e) {
+        e.printStackTrace();
         JOptionPane.showMessageDialog(frame, e);
     }
 

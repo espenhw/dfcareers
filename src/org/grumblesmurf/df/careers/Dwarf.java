@@ -39,6 +39,11 @@ public class Dwarf implements Comparable<Dwarf>
 
     public static Dwarf from(Element creature) {
         String name = textContentOfFirstChildNamed("Name", creature);
+        // Workaround for dfhack weirdness
+        String[] bits = name.split(" ");
+        if (bits.length > 1 && bits[0].equals(bits[1])) {
+            name = name.substring(bits[0].length() + 1);
+        }
         String nickName = textContentOfFirstChildNamed("Nickname", creature);
         String sex = textContentOfFirstChildNamed("Sex", creature);
 

@@ -7,10 +7,10 @@ public enum Position
 {
     Manager(AnalyticalAbility, Creativity, SocialAwareness, LinguisticAbility, Empathy, SocialAwareness) {
         public Evaluation evaluate(Dwarf dwarf) {
-            if (dwarf.trait("Honesty").value < 40) {
+            if (dwarf.trait("STRAIGHTFORWARDNESS").value < 40) {
                 return Unsuitable;
             }
-            if (dwarf.trait("Compromising").value < 40) {
+            if (dwarf.trait("COOPERATION").value < 40) {
                 return Unsuitable;
             }
 
@@ -85,7 +85,7 @@ public enum Position
     Comedian(Agility, Creativity, KinaestheticSense, LinguisticAbility) {
         @Override
         public Evaluation evaluate(Dwarf dwarf) {
-            if (dwarf.trait("Neurosis").value > 75) {
+            if (dwarf.trait("SELF_CONSCIOUSNESS").value > 75) {
                 return Unsuitable;
             }
             return super.evaluate(dwarf);
@@ -94,7 +94,7 @@ public enum Position
     Intimidator(Agility, KinaestheticSense, LinguisticAbility) {
         @Override
         public Evaluation evaluate(Dwarf dwarf) {
-            if (dwarf.trait("Compromising").value > 60) {
+            if (dwarf.trait("COOPERATION").value > 60) {
                 return Unsuitable;
             }
             return super.evaluate(dwarf);
@@ -104,7 +104,7 @@ public enum Position
     Liar(Creativity, LinguisticAbility, SocialAwareness) {
         @Override
         public Evaluation evaluate(Dwarf dwarf) {
-            if (dwarf.trait("Honesty").value > 39) {
+            if (dwarf.trait("STRAIGHTFORWARDNESS").value > 39) {
                 return Unsuitable;
             }
             return super.evaluate(dwarf);
