@@ -30,10 +30,12 @@ public class Main
         frame.setVisible(true);
     }
 
-    public static void readDwarvesFrom(File file) {
+    public static void readDwarves() throws IOException {
         dwarvesList.clear();
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+        File file = File.createTempFile("dfcareers", ".xml");
         try {
+            exportDwarvesTo(file);
             Document doc = dbFactory.newDocumentBuilder().parse(file);
             NodeList creatures = doc.getElementsByTagName("Creature");
             List<Dwarf> newDwarves = new LinkedList<Dwarf>();
@@ -46,10 +48,22 @@ public class Main
             generateEmbarkHelp();
         } catch (Exception e) {
             reportError(e);
+        } finally {
+            file.delete();
         }
     }
 
-    private static void reportError(Exception e) {
+    private static void exportDwarvesTo(File file) throws IOException {
+        RemoteDFHack dfhack = RemoteDFHack.connect();
+        try {
+            String path = file.getAbsolutePath();
+            dfhack.runCommand("dwarfexport", path);
+        } finally {
+            dfhack.close();
+        }
+    }
+
+    static void reportError(Exception e) {
         e.printStackTrace();
         JOptionPane.showMessageDialog(frame, e);
     }

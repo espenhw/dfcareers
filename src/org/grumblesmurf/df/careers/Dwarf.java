@@ -12,7 +12,6 @@ import java.util.*;
 public class Dwarf implements Comparable<Dwarf>
 {
     final String name;
-    private final String nickName;
     final String sex;
     final Map<String, Integer> attributes;
     final Map<String, Trait> traits;
@@ -25,7 +24,6 @@ public class Dwarf implements Comparable<Dwarf>
     private Dwarf(String name, String nickName, String sex, Map<String, Integer> attributes,
                   Map<String, Trait> traits) {
         this.name = name;
-        this.nickName = nickName;
         this.sex = sex;
         this.attributes = attributes;
         this.traits = traits;

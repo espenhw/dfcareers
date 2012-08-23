@@ -3,19 +3,16 @@ package org.grumblesmurf.df.careers;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import javax.swing.filechooser.FileFilter;
 import javax.swing.text.html.HTMLDocument;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Comparator;
 
 public class MainForm
 {
     private JTabbedPane tabbedPane1;
-    private JTextField filename;
-    private JButton browse;
     private JList dwarves;
     JTextPane dwarfInfo;
     private JList jobs;
@@ -25,27 +22,9 @@ public class MainForm
     private JPanel dwarvesPanel;
     private JPanel jobsPanel;
     JTextPane embarkHelp;
-    private JButton reload;
-
-    private JFileChooser chooser = new JFileChooser(new File("."));
-    private File file;
+    private JButton load;
 
     public MainForm() {
-        chooser.setDialogTitle("Open XML file");
-        chooser.setFileFilter(new XmlFileFilter());
-        chooser.addChoosableFileFilter(new XmlFileFilter());
-
-        browse.addActionListener(new ActionListener()
-        {
-            public void actionPerformed(ActionEvent e) {
-                if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-                    file = chooser.getSelectedFile();
-                    filename.setText(file.getPath());
-                    reload.setEnabled(true);
-                    Main.readDwarvesFrom(file);
-                }
-            }
-        });
         dwarves.addListSelectionListener(new ListSelectionListener()
         {
             @Override
@@ -68,18 +47,22 @@ public class MainForm
         {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (tabbedPane1.getSelectedComponent() == dwarvesPanel) {
+                if (tabbedPane1.getSelectedComponent() == dwarvesPanel && !dwarves.isSelectionEmpty()) {
                     Main.displayDwarf(dwarves.getSelectedIndex());
-                } else {
+                } else if (!jobs.isSelectionEmpty()) {
                     Main.displayJob(jobs.getSelectedValue().toString());
                 }
             }
         });
-        reload.addActionListener(new ActionListener()
+        load.addActionListener(new ActionListener()
         {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.readDwarvesFrom(file);
+                try {
+                    Main.readDwarves();
+                } catch (IOException e1) {
+                    Main.reportError(e1);
+                }
             }
         });
     }
@@ -110,18 +93,5 @@ public class MainForm
         tmp.setContentType("text/html");
         tmp.setText("<html><head><style>th { text-align: right; }</style></head><body id='body'></body></html>");
         return tmp;
-    }
-
-    private static class XmlFileFilter extends FileFilter
-    {
-        @Override
-        public boolean accept(File f) {
-            return f.isDirectory() || f.getName().endsWith(".xml");
-        }
-
-        @Override
-        public String getDescription() {
-            return "*.xml";
-        }
     }
 }
