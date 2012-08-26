@@ -15,12 +15,7 @@ public enum Attribute
     Patience(PercentageCalculator.Plus),
     Empathy(PercentageCalculator.Average),
     SocialAwareness(PercentageCalculator.Average),
-    Creativity(PercentageCalculator.Plus) {
-        @Override
-        public String toString() {
-            return "Creatvity";
-        }
-    },
+    Creatvity(PercentageCalculator.Plus),
     Musicality(PercentageCalculator.Average),
     AnalyticalAbility(PercentageCalculator.Plus),
     LinguisticAbility(PercentageCalculator.Average),

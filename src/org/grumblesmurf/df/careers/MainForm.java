@@ -6,7 +6,6 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.text.html.HTMLDocument;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -18,7 +17,6 @@ public class MainForm
     private JList jobs;
     JTextPane jobInfo;
     JPanel contentPane;
-    JCheckBox showOnlyPositive;
     private JPanel dwarvesPanel;
     private JPanel jobsPanel;
     JTextPane embarkHelp;
@@ -43,24 +41,13 @@ public class MainForm
                 }
             }
         });
-        showOnlyPositive.addActionListener(new ActionListener()
-        {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (tabbedPane1.getSelectedComponent() == dwarvesPanel && !dwarves.isSelectionEmpty()) {
-                    Main.displayDwarf(dwarves.getSelectedIndex());
-                } else if (!jobs.isSelectionEmpty()) {
-                    Main.displayJob(jobs.getSelectedValue().toString());
-                }
-            }
-        });
         load.addActionListener(new ActionListener()
         {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
                     Main.readDwarves();
-                } catch (IOException e1) {
+                } catch (Exception e1) {
                     Main.reportError(e1);
                 }
             }

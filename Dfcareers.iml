@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="scala" name="Scala">
+      <configuration>
+        <option name="deprecationWarnings" value="true" />
+        <option name="explainTypeErrors" value="true" />
+        <option name="fsc" value="true" />
+        <option name="uncheckedWarnings" value="true" />
+      </configuration>
+    </facet>
+  </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
@@ -7,7 +17,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/protobuf-java-2.4.1.jar!/" />
@@ -16,6 +26,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="scala-library-2.9.2" level="project" />
   </component>
 </module>
 

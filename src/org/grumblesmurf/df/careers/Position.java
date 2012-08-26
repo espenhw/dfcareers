@@ -5,12 +5,12 @@ import static org.grumblesmurf.df.careers.Evaluation.Unsuitable;
 
 public enum Position
 {
-    Manager(AnalyticalAbility, Creativity, SocialAwareness, LinguisticAbility, Empathy, SocialAwareness) {
+    Manager(AnalyticalAbility, Creatvity, SocialAwareness, LinguisticAbility, Empathy, SocialAwareness) {
         public Evaluation evaluate(Dwarf dwarf) {
-            if (dwarf.trait("STRAIGHTFORWARDNESS").value < 40) {
+            if (dwarf.getTrait("STRAIGHTFORWARDNESS").value() < 40) {
                 return Unsuitable;
             }
-            if (dwarf.trait("COOPERATION").value < 40) {
+            if (dwarf.getTrait("COOPERATION").value() < 40) {
                 return Unsuitable;
             }
 
@@ -26,15 +26,15 @@ public enum Position
     Socializer(LinguisticAbility, Empathy, SocialAwareness),
     Miner(Strength, Toughness, Endurance, Willpower, SpatialSense, KinaestheticSense),
     Biter(Strength, Toughness, Endurance, Willpower, SpatialSense, KinaestheticSense),
-    Bowyer(Agility, Creativity, SpatialSense, KinaestheticSense),
-    Engraver(Agility, Creativity, SpatialSense, KinaestheticSense),
-    GemSetter(Agility, Creativity, SpatialSense, KinaestheticSense),
-    BoneCarver(Agility, Creativity, SpatialSense, KinaestheticSense),
-    Clothier(Agility, Creativity, SpatialSense, KinaestheticSense),
-    StoneCrafter(Agility, Creativity, SpatialSense, KinaestheticSense),
-    Weaver(Agility, Creativity, SpatialSense, KinaestheticSense),
-    WoodCrafter(Agility, Creativity, SpatialSense, KinaestheticSense),
-    Carpenter(Strength, Agility, Creativity, SpatialSense, KinaestheticSense),
+    Bowyer(Agility, Creatvity, SpatialSense, KinaestheticSense),
+    Engraver(Agility, Creatvity, SpatialSense, KinaestheticSense),
+    GemSetter(Agility, Creatvity, SpatialSense, KinaestheticSense),
+    BoneCarver(Agility, Creatvity, SpatialSense, KinaestheticSense),
+    Clothier(Agility, Creatvity, SpatialSense, KinaestheticSense),
+    StoneCrafter(Agility, Creatvity, SpatialSense, KinaestheticSense),
+    Weaver(Agility, Creatvity, SpatialSense, KinaestheticSense),
+    WoodCrafter(Agility, Creatvity, SpatialSense, KinaestheticSense),
+    Carpenter(Strength, Agility, Creatvity, SpatialSense, KinaestheticSense),
     Woodcutter(Strength, Agility, Endurance, Willpower, SpatialSense, KinaestheticSense),
     Swimmer(Strength, Agility, Endurance, Willpower, SpatialSense, KinaestheticSense),
     Wrestler(Strength, Agility, Endurance, Willpower, SpatialSense, KinaestheticSense),
@@ -49,7 +49,7 @@ public enum Position
     Tanner(Agility, KinaestheticSense),
     FishDissector(Agility, KinaestheticSense),
     AnimalTrainer(Agility, Toughness, Endurance, Intuition, Patience, Empathy),
-    Trapper(Agility, AnalyticalAbility, Creativity, SpatialSense),
+    Trapper(Agility, AnalyticalAbility, Creatvity, SpatialSense),
     BoneDoctor(Strength, Agility, Focus, SpatialSense, KinaestheticSense),
     CrutchWalker(Agility, Endurance, Willpower, SpatialSense, KinaestheticSense),
     Diagnostician(AnalyticalAbility, Memory, Intuition),
@@ -62,8 +62,8 @@ public enum Position
     Milker(Strength, Agility, Endurance, KinaestheticSense),
     Miller(Strength, Agility, Endurance, KinaestheticSense),
     Thresher(Strength, Agility, Endurance, KinaestheticSense),
-    CheeseMaker(Strength, Agility, Endurance, AnalyticalAbility, Creativity, KinaestheticSense),
-    Cook(Agility, AnalyticalAbility, Creativity, KinaestheticSense),
+    CheeseMaker(Strength, Agility, Endurance, AnalyticalAbility, Creatvity, KinaestheticSense),
+    Cook(Agility, AnalyticalAbility, Creatvity, KinaestheticSense),
     Herbalist(Agility, Memory, KinaestheticSense),
     LyeMaker(Strength, Toughness, Endurance, KinaestheticSense),
     PotashMaker(Strength, Toughness, Endurance, KinaestheticSense),
@@ -73,19 +73,19 @@ public enum Position
     FurnaceOperator(Strength, Toughness, Endurance, AnalyticalAbility, KinaestheticSense),
     GemCutter(Agility, AnalyticalAbility, SpatialSense, KinaestheticSense),
     StrandExctractor(Strength, Agility, Endurance, AnalyticalAbility, KinaestheticSense),
-    Mechanic(Strength, Agility, Endurance, AnalyticalAbility, Creativity, SpatialSense),
-    SiegeEngineer(Strength, Agility, Endurance, AnalyticalAbility, Creativity, SpatialSense),
+    Mechanic(Strength, Agility, Endurance, AnalyticalAbility, Creatvity, SpatialSense),
+    SiegeEngineer(Strength, Agility, Endurance, AnalyticalAbility, Creatvity, SpatialSense),
     PumpOperator(Strength, Toughness, Endurance, Willpower, KinaestheticSense),
     SiegeOperator(Strength, Toughness, Endurance, AnalyticalAbility, Focus, SpatialSense),
-    BuildingDesigner(AnalyticalAbility, Creativity, SpatialSense),
-    Organizer(AnalyticalAbility, Creativity, SocialAwareness),
+    BuildingDesigner(AnalyticalAbility, Creatvity, SpatialSense),
+    Organizer(AnalyticalAbility, Creatvity, SocialAwareness),
     RecordKeeper(AnalyticalAbility, Memory, Focus),
     Student(AnalyticalAbility, Memory, Focus),
     Dodger(Agility, Toughness, Endurance, Willpower, SpatialSense, KinaestheticSense),
-    Comedian(Agility, Creativity, KinaestheticSense, LinguisticAbility) {
+    Comedian(Agility, Creatvity, KinaestheticSense, LinguisticAbility) {
         @Override
         public Evaluation evaluate(Dwarf dwarf) {
-            if (dwarf.trait("SELF_CONSCIOUSNESS").value > 75) {
+            if (dwarf.getTrait("SELF_CONSCIOUSNESS").value() > 75) {
                 return Unsuitable;
             }
             return super.evaluate(dwarf);
@@ -94,17 +94,17 @@ public enum Position
     Intimidator(Agility, KinaestheticSense, LinguisticAbility) {
         @Override
         public Evaluation evaluate(Dwarf dwarf) {
-            if (dwarf.trait("COOPERATION").value > 60) {
+            if (dwarf.getTrait("COOPERATION").value() > 60) {
                 return Unsuitable;
             }
             return super.evaluate(dwarf);
         }
     },
     JudgeOfIntent(Intuition, Empathy, SocialAwareness),
-    Liar(Creativity, LinguisticAbility, SocialAwareness) {
+    Liar(Creatvity, LinguisticAbility, SocialAwareness) {
         @Override
         public Evaluation evaluate(Dwarf dwarf) {
-            if (dwarf.trait("STRAIGHTFORWARDNESS").value > 39) {
+            if (dwarf.getTrait("STRAIGHTFORWARDNESS").value() > 39) {
                 return Unsuitable;
             }
             return super.evaluate(dwarf);
